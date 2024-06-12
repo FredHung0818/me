@@ -1,1 +1,2 @@
 TODO: Reflect on what you learned this week and what is still unclear.
+this week we learn some basic coding, as well as learnt to check for error in a script, which would be a huge help in understanding the mistake in my script and what to improve on, we also did a some coding that is a little more advance, creating lists and simple flow chart using python script, in which i gain a little more understanding in the logic of python script and how certain thing arent meant to work together. However, i still feel like i have much to learn.

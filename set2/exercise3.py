@@ -18,7 +18,11 @@ def is_odd(a_number):
 
     So if a_number modulo two is zero, then it's even.
     """
-    return None
+
+    if a_number % 2 == 0:
+        return False
+    else:
+        return True
 
 
 def fix_it(moves=True, should_move=True):
@@ -36,6 +40,17 @@ def fix_it(moves=True, should_move=True):
     Most people write this function with 4 return statements.
     As an extra challenge, see if you can get that down to three.
     """
+    if moves:
+        if should_move:
+            return "No Problem"
+        else:
+            return "Duct Tape"
+    else:
+        if should_move:
+            return "WD-40"
+        else:
+            return "No Problem"
+
     return None
 
 
@@ -59,7 +74,10 @@ def loops_1a():
     return a list of 10 items, each one a string with exacly one star in it.
     E.g.: ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*']
     """
-    return None
+    choc_list = []
+    for i in range(10):
+        choc_list.append("*")
+    return choc_list
 
 
 def loops_1c(number_of_items=5, symbol="#"):
@@ -72,7 +90,11 @@ def loops_1c(number_of_items=5, symbol="#"):
     Remember that you're being passed arguments here. Don't hard code the number
     or the symbol, let it be whatever it wants to be.
     """
-    return None
+    list = []
+
+    for _ in range(number_of_items):
+        list.append(symbol)
+    return list
 
 
 def loops_2_preview():
@@ -114,7 +136,13 @@ def loops_2():
             ['*', '*', '*', '*', '*', '*', '*', '*', '*', '*'],
           ]
     """
-    return None
+    field = []
+    for i in range(10):
+        row = []
+        for j in range(10):
+            row.append("*")
+        field.append(row)
+    return field
 
 
 def loops_3():
@@ -138,7 +166,15 @@ def loops_3():
     TIP: notice that this needs to to return strings of numbers,
          so call str(number) to cast.
     """
-    return None
+    number_square = []
+    for i in range(10):
+        number_row = []
+        for j in range(10):
+            number_row.append(str(i))
+        number_square.append(number_row)
+
+    print(number_square)
+    return number_square
 
 
 def loops_4():
@@ -158,7 +194,12 @@ def loops_4():
       ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9']
     ]
     """
-    return None
+
+    number_square = []
+    for i in range(10):
+        number_square.append(range(10))
+
+    return number_square
 
 
 def loops_5():
@@ -188,7 +229,14 @@ def loops_5():
         f"There are {num_bottles} green bottles"
     you'll come to see the pros and cons of each over time.
     """
-    return None
+    number_square = []
+    for i in range(10):
+        coordinates_row = []
+        for j in range(5):
+            coordinates_row.append(f"(i{i}, j{j})")
+        number_square.append(coordinates_row)
+
+    print(number_square)
 
 
 def loops_6():
@@ -211,7 +259,7 @@ def loops_6():
     You can use a variable.
     TIP: look out for the starting condition.
     """
-    return None
+    return [list(map(str, range(i + 1))) for i in range(10)]
 
 
 def loops_7():
@@ -235,7 +283,11 @@ def loops_7():
     This is a hard problem. Use lots of experimentation and draw
     lots of diagrams!
     """
-    return None
+    pyramid = []
+    for i in range(5):
+        row = [" "] * (4 - i) + ["*"] * (2 * i + 1) + [" "] * (4 - i)
+        pyramid.append(row)
+    return pyramid
 
 
 if __name__ == "__main__":
@@ -245,6 +297,7 @@ if __name__ == "__main__":
     # code is robust to the situations that you'll see in action.
     try:
         from helper import little_printer, minitest
+
         minitest(is_odd, [1], True)
         minitest(is_odd, [4], False)
         minitest(fix_it, [True, True], "No Problem")
@@ -262,6 +315,9 @@ if __name__ == "__main__":
         little_printer(loops_6(), "loops_6")
         little_printer(loops_7(), "loops_7")
     except ModuleNotFoundError as e:
-        print("⚠"*20, "\nWe're looking for a module that's missing. That's probably a problem that a tutor needs to figure out.\n")
+        print(
+            "⚠" * 20,
+            "\nWe're looking for a module that's missing. That's probably a problem that a tutor needs to figure out.\n",
+        )
         print(e)
-        print("⚠"*20)
+        print("⚠" * 20)
