@@ -197,7 +197,9 @@ def loops_4():
 
     number_square = []
     for i in range(10):
-        number_square.append(range(10))
+        for _ in range(10):
+        row = [str(i) for i in range(10)]
+        number_square.append(row)
 
     return number_square
 
@@ -236,7 +238,7 @@ def loops_5():
             coordinates_row.append(f"(i{i}, j{j})")
         number_square.append(coordinates_row)
 
-    print(number_square)
+    return number_square
 
 
 def loops_6():
